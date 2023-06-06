@@ -14,7 +14,7 @@ const path = require('path');
 const app = express();
 
 // Priority serve any static files.
-app.use(express.static(path.resolve(__dirname, './client/build')));
+app.use(express.static(path.resolve(__dirname, '../client/build')));
 
 /**
  * Generates a random string containing numbers and letters
@@ -118,7 +118,7 @@ app.get('/refresh_token', (req, res) => {
 
 // All remaining requests return the React app, so it can handle routing.
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './client/build', 'index.html'));
+  res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 });
 
 
