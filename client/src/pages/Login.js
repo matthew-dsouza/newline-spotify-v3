@@ -3,7 +3,7 @@ import styled from 'styled-components/macro';
 const LOGIN_URI =
   process.env.NODE_ENV !== 'production'
     ? 'http://localhost:8888/login'
-    : 'https://newline-spotify-v3.netlify.app/login';
+    : 'https://spotify-profile-v2.herokuapp.com/login';
 
 const StyledLoginContainer = styled.main`
   display: flex;
