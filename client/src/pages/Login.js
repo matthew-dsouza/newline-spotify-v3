@@ -1,5 +1,10 @@
 import styled from 'styled-components/macro';
 
+const LOGIN_URI =
+  process.env.NODE_ENV !== 'production'
+    ? 'http://localhost:8888/login'
+    : 'https://newline-spotify-v3.netlify.app/login';
+
 const StyledLoginContainer = styled.main`
   display: flex;
   flex-direction: column;
@@ -16,6 +21,7 @@ const StyledLoginButton = styled.a`
   font-weight: 700;
   font-size: var(--fz-lg);
   padding: var(--spacing-sm) var(--spacing-xl);
+  margin-top: 3vh;
 
   &:hover,
   &:focus {
@@ -24,13 +30,9 @@ const StyledLoginButton = styled.a`
   }
 `;
 
-const LOGIN_URI =
-  process.env.NODE_ENV !== 'production'
-    ? 'http://localhost:8888/login'
-    : 'https://spotify-profile-v2.herokuapp.com/login';
-
 const Login = () => (
   <StyledLoginContainer>
+    <h1>Spotify Profile</h1>
     <StyledLoginButton href={LOGIN_URI}>
       Log in to Spotify
     </StyledLoginButton>
